@@ -47,4 +47,4 @@ runs:
         echo "$PATH" >>"$GITHUB_PATH"
         echo "LIBCLANG_PATH=${LIBCLANG_PATH}" >>"$GITHUB_ENV"
         [[ "${{ inputs.default }}" = true ]] && rustup default esp || true
-        [[ "${{ inputs.override }}" = true ]] && rustup override unset || rustup override set esp
+        [[ "${{ inputs.override }}" = true ]] && rustup override set esp || rustup override unset
