@@ -36,7 +36,7 @@ runs:
     - name: Install espup
       shell: bash
       run: |
-        curl -L https://github.com/esp-rs/espup/releases/latest/download/espup-x86_64-unknown-linux-gnu  -o $HOME/.cargo/bin/espup
+        curl -L https://github.com/SergioGasquez/espup/releases/latest/download/espup-x86_64-unknown-linux-gnu  -o $HOME/.cargo/bin/espup
         chmod a+x $HOME/.cargo/bin/espup
     - name: Install Xtensa toolchain
       shell: bash
@@ -47,4 +47,4 @@ runs:
         echo "$PATH" >>"$GITHUB_PATH"
         echo "LIBCLANG_PATH=${LIBCLANG_PATH}" >>"$GITHUB_ENV"
         [[ "${{ inputs.default }}" = true ]] && rustup default esp || true
-        [[ "${{ inputs.override }}" = true ]] && rustup override set esp || rustup override unset
+        [[ "${{ inputs.override }}" = true ]] && rustup override unset || true
