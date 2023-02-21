@@ -36,8 +36,7 @@ runs:
     - name: Install espup
       shell: bash
       run: |
-        curl -L https://github.com/SergioGasquez/espup/releases/download/v0.2.6/espup-linux.zip -o $HOME/.cargo/bin/espup.zip
-        unzip "$HOME/.cargo/bin/espup.zip" -d "$HOME/.cargo/bin/"
+        curl -L https://github.com/esp-rs/espup/releases/download/v0.3.0/espup-x86_64-unknown-linux-gnu -o $HOME/.cargo/bin/espup
         chmod a+x $HOME/.cargo/bin/espup
     - name: Install Xtensa toolchain
       shell: bash
