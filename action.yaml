@@ -61,9 +61,10 @@ runs:
     - name: Install espup
       shell: bash
       run: |
-        curl -LO https://github.com/esp-rs/espup/releases/latest/download/espup-${{ env.HOST_TARGET }}.zip
-        unzip -o espup-${{ env.HOST_TARGET }}.zip -d "$HOME/.cargo/bin"
-        chmod +x "$HOME/.cargo/bin/espup"*
+        # curl -LO https://github.com/esp-rs/espup/releases/latest/download/espup-${{ env.HOST_TARGET }}.zip
+        # unzip -o espup-${{ env.HOST_TARGET }}.zip -d "$HOME/.cargo/bin"
+        # chmod +x "$HOME/.cargo/bin/espup"*
+        cargo install espup --git https://github.com/SergioGasquez/espup --branch feat/update-llvm
         echo "ESPUP_EXPORT_FILE=$HOME/exports" >> $GITHUB_ENV
 
     - name: Install Xtensa toolchain (Linux, macOS)
