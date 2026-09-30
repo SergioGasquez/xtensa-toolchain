@@ -70,7 +70,7 @@ runs:
     - name: Install espup
       shell: bash
       run: |
-        curl -LO https://github.com/esp-rs/espup/releases/latest/download/espup-${{ env.HOST_TARGET }}.zip
+        curl -LO https://github.com/esp-rs/espup/releases/download/v0.18.0/espup-${{ env.HOST_TARGET }}.zip
         unzip -o espup-${{ env.HOST_TARGET }}.zip -d "$HOME/.cargo/bin"
         chmod +x "$HOME/.cargo/bin/espup"*
         echo "ESPUP_EXPORT_FILE=$HOME/exports" >> $GITHUB_ENV
